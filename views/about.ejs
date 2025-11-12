@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 
+      Page Title: dynamically displays the shop name using EJS templating.
+      Example result: "About Coffee Corner"
+    -->
+    <title>About <%= shopName %></title>
+
+    <!-- Link to shared CSS stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVIGATION BAR
+         Provides links to all main sections of the website.
+         ================================ -->
+    <section>
+      <div class="navigation">
+        <a class="button" href="http://localhost:8000/">Home</a>
+        <a class="button" href="http://localhost:8000/about">About</a>
+        <a class="button" href="http://localhost:8000/search">Search</a>
+        <a class="button" href="http://localhost:8000/register">Register</a>
+        <a class="button" href="http://localhost:8000/survey">Survey</a>
+      </div>
+    </section>
+
+    <!-- ================================
+         ABOUT SECTION
+         Describes the business and lists store locations.
+         ================================ -->
+    <section>
+      <h1>About Us</h1>
+      <h2>Come try our drinks!</h2>
+      <p>
+        We sell a variety of drinks, satisfying your taste buds while being affordable — a student's dream!
+      </p>
+
+      <!-- ================================
+           LOCATION LIST
+           Displays all store locations and their managers.
+           ================================ -->
+      <h3>Current Locations:</h3>
+
+      <!-- Each article represents a branch location -->
+      <article class="item">
+        <p class="location">London, E1 2AH</p>
+        <p class="manager">Sara Hussain</p>
+      </article>
+
+      <article class="item">
+        <p class="location">Birmingham, B13 6BD</p>
+        <p class="manager">Muhammad Khan</p>
+      </article>
+
+      <article class="item">
+        <p class="location">Manchester, M2 3VA</p>
+        <p class="manager">Haadiya Aswad</p>
+      </article>
+
+      <article class="item">
+        <p class="location">Glasgow, G1 4NZ</p>
+        <p class="manager">Jeremy Waters</p>
+      </article>
+
+      <article class="item">
+        <p class="location">Dundee, DD1 5PQ</p>
+        <p class="manager">Lily James</p>
+      </article>
+    </section>
+
+    <!-- ================================
+         FRANCHISE CONTACT FORM
+         Allows potential franchisees to get in touch with the business.
+         ================================ -->
+    <section>
+      <h3>Franchise Contact:</h3>
+
+      <!-- 
+        Form configuration:
+        - method="POST": securely sends form data to the server
+        - action="/franchise": backend route that processes messages
+      -->
+      <form method="POST" action="/franchise">
+        
+        <!-- Email input field -->
+        <div class="form-control">
+          <label for="email" id="label-email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <!-- Message textarea field -->
+        <div class="form-control">
+          <label for="comment">Message</label>
+          <textarea
+            name="comment"
+            id="comment"
+            placeholder="Enter your comment here"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" value="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>

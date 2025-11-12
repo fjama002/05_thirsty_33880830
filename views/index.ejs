@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 
+      Page Title: dynamically includes the shop name using EJS templating.
+      Example output: "Welcome to Coffee Corner"
+    -->
+    <title>Welcome to <%= shopName %></title>
+
+    <!-- Link to shared CSS stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVIGATION BAR
+         Provides consistent navigation across all pages.
+         ================================ -->
+    <section>
+      <div class="navigation">
+        <a class="button" href="http://localhost:8000/">Home</a>
+        <a class="button" href="http://localhost:8000/about">About</a>
+        <a class="button" href="http://localhost:8000/search">Search</a>
+        <a class="button" href="http://localhost:8000/register">Register</a>
+        <a class="button" href="http://localhost:8000/survey">Survey</a>
+      </div>
+    </section>
+
+    <!-- ================================
+         MAIN CONTENT SECTION
+         Displays the shop name and a dynamically generated list of products.
+         ================================ -->
+    <section>
+      <!-- 
+        The <%= %> EJS tags output variables into HTML.
+        Here, shopName is passed from the server and rendered inside the heading.
+      -->
+      <h1>The <%= shopName %> Shop</h1>
+
+      <h2>Here are some things that we sell:</h2>
+
+      <!-- 
+        Unordered list of product categories.
+        Uses EJS loop syntax to iterate over the "productCategories" array.
+      -->
+      <ul>
+        <% for (let i = 0; i < productCategories.length; i++) { %>
+          <!-- 
+            Each <li> displays a product category (e.g., "Coffee", "Smoothies").
+            The <%= %> tag inserts the value into the HTML output.
+          -->
+          <li><%= productCategories[i] %></li>
+        <% } %>
+      </ul>
+    </section>
+  </body>
+</html>

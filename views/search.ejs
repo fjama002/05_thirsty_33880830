@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 
+      Page Title: dynamically includes the shop name using EJS templating.
+      Example output: "Search Drinks at Coffee Corner"
+    -->
+    <title>Search Drinks at <%= shopName %></title>
+
+    <!-- Link to shared external stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVIGATION BAR
+         Provides links to main sections of the website.
+         ================================ -->
+    <section>
+      <div class="navigation">
+        <a class="button" href="http://localhost:8000/">Home</a>
+        <a class="button" href="http://localhost:8000/about">About</a>
+        <a class="button" href="http://localhost:8000/search">Search</a>
+        <a class="button" href="http://localhost:8000/register">Register</a>
+        <a class="button" href="http://localhost:8000/survey">Survey</a>
+      </div>
+    </section>
+
+    <!-- ================================
+         SEARCH FORM SECTION
+         Allows users to search for drinks or products by name and category.
+         ================================ -->
+    <section>
+      <h1>Search Our Products</h1>
+
+      <!-- 
+        Form configuration:
+        - action="/search_result": sends data to the search results route
+        - method="GET": sends search parameters via the URL query string
+      -->
+      <form action="/search_result" method="GET">
+
+        <!-- ================================
+             PRODUCT NAME SEARCH FIELD
+             Lets users search by product name.
+             ================================ -->
+        <div class="form-control">
+          <label for="search-name" id="label-search-name">Name of the product</label>
+          <input
+            type="text"
+            id="search-name"
+            name="search_text"
+            placeholder="Enter the name"
+          />
+        </div>
+
+        <!-- ================================
+             PRODUCT CATEGORY SEARCH FIELD
+             Lets users filter results by category (e.g., coffee, juice, smoothie).
+             ================================ -->
+        <div class="form-control">
+          <label for="search-category" id="label-search-category">Category of the product</label>
+          <input
+            type="text"
+            id="search-category"
+            name="category"
+            placeholder="Enter the category"
+          />
+        </div>
+
+        <!-- ================================
+             SUBMIT BUTTON
+             Executes the search query and navigates to the results page.
+             ================================ -->
+        <button type="submit" value="submit">Search</button>
+      </form>
+    </section>
+  </body>
+</html>

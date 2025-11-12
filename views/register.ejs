@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 
+      Page Title: dynamically inserts the shop name using EJS templating.
+      Example: "Register at Coffee Corner"
+    -->
+    <title>Register at <%= shopName %></title>
+
+    <!-- Link to shared external stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVIGATION BAR
+         Provides quick links to main site sections.
+         ================================ -->
+    <section>
+      <div class="navigation">
+        <a class="button" href="http://localhost:8000/">Home</a>
+        <a class="button" href="http://localhost:8000/about">About</a>
+        <a class="button" href="http://localhost:8000/search">Search</a>
+        <a class="button" href="http://localhost:8000/register">Register</a>
+        <a class="button" href="http://localhost:8000/survey">Survey</a>
+      </div>
+    </section>
+
+    <!-- ================================
+         REGISTRATION FORM SECTION
+         Allows new users to register with the business.
+         ================================ -->
+    <section>
+      <h1>Register With Us</h1>
+
+      <!-- 
+        Main form element
+        - method="POST": sends form data securely to the server
+        - action="/registered": server route that handles registration logic
+      -->
+      <form id="form" method="POST" action="/registered">
+
+        <!-- ================================
+             FIRST NAME FIELD
+             User enters their first name here.
+             ================================ -->
+        <div class="form-control">
+          <label for="first-name" id="label-first-name">First Name</label>
+          <input
+            type="text"
+            id="first-name"
+            name="firstName"
+            placeholder="Enter your first name"
+            required
+          />
+        </div>
+
+        <!-- ================================
+             LAST NAME FIELD
+             User enters their last name here.
+             ================================ -->
+        <div class="form-control">
+          <label for="last-name" id="label-last-name">Last Name</label>
+          <input
+            type="text"
+            id="last-name"
+            name="lastName"
+            placeholder="Enter your last name"
+            required
+          />
+        </div>
+
+        <!-- ================================
+             EMAIL FIELD
+             Collects the user's email address.
+             ================================ -->
+        <div class="form-control">
+          <label for="email" id="label-email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+
+        <!-- ================================
+             SUBMIT BUTTON
+             Sends the registration data to the server.
+             ================================ -->
+        <button type="submit" value="submit">Register</button>
+      </form>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+/* ================================
+   1. GLOBAL STYLES
+   ================================ */
+
+/* Set general body styles */
+body {
+  background-color: #82c1c5;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* Common heading and text element styles */
+h1,
+h2,
+h3,
+ul,
+p {
+  color: #edeff2;
+  padding: 1px;
+}
+
+/* Consistent sizing and centering for text elements */
+ul,
+p {
+  font-size: large;
+  margin: auto;
+}
+
+/* ================================
+   2. TYPOGRAPHY & LAYOUT
+   ================================ */
+
+/* Paragraph layout */
+p {
+  text-align: center;
+  width: 30%;
+}
+
+/* List layout */
+ul {
+  text-align: left;
+  width: 27%;
+}
+
+/* ================================
+   3. NAVIGATION
+   ================================ */
+
+.navigation {
+  padding: 20px;
+}
+
+/* ================================
+   4. CONTENT STRUCTURE
+   ================================ */
+
+/* Used for itemised sections (e.g., menu items, staff entries) */
+.item p {
+  display: inline-block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* Used for left-aligned location info 
+    Template inspired by: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-basic-css-by-building-a-cafe-menu/step-1 */
+
+.location {
+  text-align: left;
+  width: 15%;
+}
+
+/* Used for right-aligned manager info */
+.manager {
+  text-align: right;
+  width: 15%;
+}
+
+/* ================================
+   5. BUTTON STYLING
+   Template inspired by: https://getcssscan.com/css-buttons-examples
+   ================================ */
+
+.button {
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #82c1c5;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 25px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+/* Button hover state */
+.button:hover {
+  background-color: #f3f4f6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+/* Button disabled state */
+.button:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+/* Button active (pressed) state */
+.button:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+/* Button focus state */
+.button:focus {
+  outline: 1px transparent;
+}
+
+/* Accessibility fixes */
+.button:before {
+  display: none;
+}
+
+.button:-webkit-details-marker {
+  display: none;
+}
+
+/* ================================
+   6. FORM STYLING
+   Template inspired by: https://www.geeksforgeeks.org/web-templates/build-a-survey-form-using-html-and-css/
+   ================================ */
+
+/* Form container */
+form {
+  background-color: #fff;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 30px 20px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Form control wrapper */
+.form-control {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+/* Labels for inputs */
+.form-control label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Text inputs, selects, and textareas */
+.form-control input,
+.form-control select,
+.form-control textarea {
+  border: 1px solid #777;
+  border-radius: 2px;
+  font-family: inherit;
+  padding: 10px;
+  display: block;
+  width: 95%;
+}
+
+/* Radio buttons and checkboxes */
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+}
+
+/* Submit button inside forms */
+button {
+  background-color: #82c1c5;
+  border: 1px solid #777;
+  border-radius: 2px;
+  font-family: inherit;
+  font-size: 21px;
+  display: block;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}

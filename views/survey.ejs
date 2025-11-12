@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- 
+      Page Title: dynamically includes the shop name using EJS templating.
+      Example result: "Survey at Coffee Corner"
+    -->
+    <title>Survey at <%= shopName %></title>
+
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+
+  <body>
+    <!-- ================================
+         NAVIGATION BAR
+         Contains links to main site pages.
+         ================================ -->
+    <section>
+      <div class="navigation">
+        <a class="button" href="http://localhost:8000/">Home</a>
+        <a class="button" href="http://localhost:8000/about">About</a>
+        <a class="button" href="http://localhost:8000/search">Search</a>
+        <a class="button" href="http://localhost:8000/register">Register</a>
+        <a class="button" href="http://localhost:8000/survey">Survey</a>
+      </div>
+    </section>
+
+    <!-- ================================
+         SURVEY FORM SECTION
+         Collects customer feedback information.
+         ================================ -->
+    <section>
+      <h1>Customer Survey</h1>
+
+      <!-- The main form container -->
+      <form id="form">
+        <!-- ================================
+             FIRST NAME FIELD
+             ================================ -->
+        <div class="form-control">
+          <label for="first-name" id="label-first-name">First Name</label>
+          <input type="text" id="first-name" placeholder="Enter your first name" />
+        </div>
+
+        <!-- ================================
+             LAST NAME FIELD
+             ================================ -->
+        <div class="form-control">
+          <label for="last-name" id="label-last-name">Last Name</label>
+          <input type="text" id="last-name" placeholder="Enter your last name" />
+        </div>
+
+        <!-- ================================
+             EMAIL FIELD
+             ================================ -->
+        <div class="form-control">
+          <label for="email" id="label-email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+
+        <!-- ================================
+             AGE FIELD
+             ================================ -->
+        <div class="form-control">
+          <label for="age" id="label-age">Age</label>
+          <input type="text" id="age" placeholder="Enter your age" />
+        </div>
+
+        <!-- ================================
+             MULTIPLE CHOICE CHECKBOXES
+             Question: Which drinks do you consume?
+             ================================ -->
+        <div class="form-control">
+          <label>Which of the following drinks do you consume?</label>
+          <small>(Check all that apply)</small>
+          <label>
+            <input type="checkbox" name="drink" value="Water" /> Water
+          </label>
+          <label>
+            <input type="checkbox" name="drink" value="Fresh Juice" /> Fresh Juice
+          </label>
+          <label>
+            <input type="checkbox" name="drink" value="Mojito" /> Mojito
+          </label>
+          <label>
+            <input type="checkbox" name="drink" value="Hot Drinks" /> Hot Drinks
+          </label>
+          <label>
+            <input type="checkbox" name="drink" value="Iced Drinks" /> Iced Drinks
+          </label>
+        </div>
+
+        <!-- ================================
+             RADIO BUTTONS
+             Question: Are you a student?
+             ================================ -->
+        <div class="form-control">
+          <label>Are you a student?</label>
+          <label>
+            <input type="radio" name="student" value="Yes" /> Yes
+          </label>
+          <label>
+            <input type="radio" name="student" value="No" /> No
+          </label>
+        </div>
+
+        <!-- ================================
+             SUBMIT BUTTON
+             Triggers form submission.
+             ================================ -->
+        <button type="submit" value="submit">Submit</button>
+      </form>
+    </section>
+  </body>
+</html>
